@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <div class="left-panel">
+    <h2>Register</h2>
+    <input type="text" placeholder="Name" id="regName">
+    <input type="email" placeholder="Email" id="regEmail">
+    <input type="password" placeholder="Password" id="regPassword">
+    <button onclick="registerUser()">Register</button>
+    <p>Already have an account? <a href="index.html">Login</a></p>
+  </div>
+
+  <div class="right-panel">
+    <h2>or use QR</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=RegisterQR">
+    <button onclick="simulateQR()">Simulate QR</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
