@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <div class="left-panel">
+    <h2>Login</h2>
+    <input type="email" placeholder="Email" id="email">
+    <input type="password" placeholder="Password" id="password">
+    <button onclick="login()">Login</button>
+    <a href="forgot.html">Forgot password?</a>
+    <p>New user? <a href="register.html">Register</a></p>
+  </div>
+
+  <div class="right-panel">
+    <h2>Login via QR</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=DemoQR" alt="QR Code">
+    <button onclick="simulateQR()">Simulate QR Scan</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
