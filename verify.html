@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verify OTP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <div class="left-panel">
+    <h2>Email Verification</h2>
+    <p>We sent an OTP to your email: <strong id="userEmail"></strong></p>
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Verify</button>
+    <p id="statusMsg"></p>
+  </div>
+
+  <div class="right-panel">
+    <h2>QR Option</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=VerifyPage&size=150x150">
+    <button onclick="simulateQR()">Simulate QR</button>
+  </div>
+
+  <script>
+    // Show stored email
+    document.getElementById("userEmail").textContent = localStorage.getItem("userEmail");
+
+    function verifyOTP() {
+      const entered = document.getElementById("otpInput").value;
+      const correct = localStorage.getItem("userOTP");
+      const msg = document.getElementById("statusMsg");
+
+      if (entered === correct) {
+        msg.style.color = "green";
+        msg.textContent = "OTP Verified! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 2000);
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Incorrect OTP. Try again.";
+      }
+    }
+
+    function simulateQR() {
+      alert("QR Verified! Redirecting...");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
