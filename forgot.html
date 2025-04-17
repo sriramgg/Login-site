@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <div class="left-panel">
+    <h2>Forgot Password</h2>
+    <p>Enter your email to receive reset link (demo)</p>
+    <input type="email" id="forgotEmail" placeholder="Enter Email">
+    <button onclick="sendReset()">Send Reset Link</button>
+    <p id="msg"></p>
+  </div>
+
+  <div class="right-panel">
+    <h2>Need Help?</h2>
+    <p>Try logging in with QR or contact support.</p>
+    <button onclick="goBack()">Back to Login</button>
+  </div>
+
+  <script>
+    function sendReset() {
+      const email = document.getElementById("forgotEmail").value;
+      const msg = document.getElementById("msg");
+      if (email) {
+        msg.style.color = "green";
+        msg.textContent = "Reset link sent to " + email + " (demo only)";
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Enter your email!";
+      }
+    }
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
