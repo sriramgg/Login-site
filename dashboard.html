@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <div class="left-panel">
+    <h2>Welcome to Dashboard 🎉</h2>
+    <p>You have successfully logged in!</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="right-panel">
+    <h2>Quick Actions</h2>
+    <ul>
+      <li>🧾 View Profile</li>
+      <li>⚙️ Settings</li>
+      <li>🔐 Security</li>
+      <li>📩 Messages</li>
+    </ul>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
